@@ -32,6 +32,9 @@ calendar <- magick::image_read('../images/calendar.png')
 dinosaur <- magick::image_read('../images/dinosaur.png')
 footprint <- magick::image_read('../images/footprint.png')
 
+hack01 <- magick::image_read('../images/hackathon.png')
+hack02 <- magick::image_read('../images/hackathon_02.png')
+hack03 <- magick::image_read('../images/coding.png')
 ```
 
 ## 02. Load fonts
@@ -50,96 +53,153 @@ font_add(family = "Bahnschrift", regular = "C:\\Windows\\Fonts\\bahnschrift.ttf"
 
 ## 03. Stickers
 
+### Defining colors palette
 ```{r}
-#| echo: false
-#| warning: false
-#| message: false
+# define pallete
+palette <- list('background' = '#d8f3dc',
+                'font' = '#4d908e',
+                'border' = '#0a9396',
+                'note' = 'grey25')
 
-statshub <- sticker(
-  # Title
-  package = "Stats-Hub",
-  # Title attributes
-  p_family = "Bahnschrift",
-  p_color = '#192a51',
-  p_size = 20,
-  p_y = 1.5,
-  # Image
-  subplot = hub,
-  # Image attributes
-  s_width = 1,
-  s_height = 1,
-  s_x = 1,
-  s_y = 0.85,
-  # Hexagon attributes
-  h_fill = '#faf9f9',
-  h_color = '#3a506b',
-  h_size = 1.5,
-  # Add a link
-  url = "FALL 2022",
-  u_size = 5,
-  u_color = '#003f88',
-  # Add spotlight
-  spotlight = F,
-  # Spotlight attributes
-  l_y = 1,
-  l_x = 1,
-  l_width = 3,
-  l_height = 3,
-  l_alpha = 0.3,
-  # File saving
-  filename = "statshub_logo.png",
-  dpi = 300,
-  white_around_sticker = FALSE
-  ) 
+# Single Palette elements
+background_color = '#d8f1ef'
+font_color = "#272640"
+border_color = "#1b3a4b"
+note_color = "black"
 
 ```
 
+### Hackaton 01
 ```{r}
-#| echo: false
-#| warning: false
-#| message: false
-
-tidymonday <- sticker(
+hex_hack01 <- sticker(
   # Title
-  package = "TidyMonday",
+  package = "AgHackathon",
   # Title attributes
   p_family = "Bahnschrift",
-  p_color = '#fffffc',
-  p_size = 20,
-  p_y = 1.45,
+  p_color = font_color,
+  p_size = 40,
+  p_y = 0.6,
   # Image
-  subplot = calendar,
+  subplot = hack01,
   # Image attributes
-  s_width = 0.8,
-  s_height = 0.8,
+  s_width = 1.1,
+  s_height = 1.1,
   s_x = 1,
-  s_y = 0.85,
+  s_y = 1.18,
   # Hexagon attributes
-  h_fill = '#3f88c5',
-  h_color = '#22223b',
-  h_size = 1.5,
+  h_fill = background_color,
+  h_color = border_color,
+  h_size = 2,
   # Add a link
-  url = "FALL 2022",
+  url = "image: Flaticon.com",
   u_size = 5,
-  u_color = '#edf2f4',
+  u_color = note_color,
   # Add spotlight
   spotlight = F,
   # Spotlight attributes
+  # add some shadow to the pictures
   l_y = 1,
-  l_x = 1,
   l_width = 3,
   l_height = 3,
-  l_alpha = 0.3,
+  l_alpha = 0.5,
   # File saving
-  filename = "tidymonday_logo.png",
-  dpi = 300,
+  filename = "AgHackaton_logo_01.png",
+  dpi = 600,
   white_around_sticker = FALSE
   ) 
 
+hex_hack01
 ```
 
+### Hackaton 02
 ```{r}
-#| echo: false
+hex_hack02 <- sticker(
+  # Title
+  package = "AgHackathon",
+  # Title attributes
+  p_family = "Bahnschrift",
+  p_color = background_color,
+  p_size = 40,
+  p_y = 0.58,
+  # Image
+  subplot = hack02,
+  # Image attributes
+  s_width = 1.1,
+  s_height = 1.1,
+  s_x = 1,
+  s_y = 1.21,
+  # Hexagon attributes
+  h_fill = border_color,
+  h_color = "#778da9",
+  h_size = 0.5,
+  # Add a link
+  url = "image: Flaticon.com",
+  u_size = 5,
+  u_color = background_color,
+  # Add spotlight
+  spotlight = F,
+  # Spotlight attributes
+  # add some shadow to the pictures
+  l_y = 1,
+  l_width = 3,
+  l_height = 3,
+  l_alpha = 0.5,
+  # File saving
+  filename = "AgHackaton_logo_02.png",
+  dpi = 600,
+  white_around_sticker = FALSE
+  ) 
+
+hex_hack02
+```
+
+### Hackaton 03
+```{r}
+hex_hack03 <- sticker(
+  # Title
+  package = "AgHackathon",
+  # Title attributes
+  p_family = "Bahnschrift",
+  p_color = background_color,
+  p_size = 40,
+  p_y = 0.58,
+  # Image
+  subplot = hack03,
+  # Image attributes
+  s_width = 1.0,
+  s_height = 1.0,
+  s_x = 1,
+  s_y = 1.21,
+  # Hexagon attributes
+  h_fill = "#3d2645",
+  h_color = background_color,
+  h_size = 0.5,
+  # Add a link
+  url = "image: Flaticon.com",
+  u_size = 5,
+  u_color = background_color,
+  # Add spotlight
+  spotlight = F,
+  # Spotlight attributes
+  # add some shadow to the pictures
+  l_y = 1,
+  l_width = 3,
+  l_height = 3,
+  l_alpha = 0.5,
+  # File saving
+  filename = "AgHackaton_logo_03.png",
+  dpi = 600,
+  white_around_sticker = FALSE
+  )  
+
+hex_hack03
+```
+
+
+
+### Statasaurus logo
+```{r}
+#| echo: true
 #| warning: false
 #| message: false
 
@@ -148,9 +208,9 @@ statasaurus <- sticker(
   package = "statasaurus",
   # Title attributes
   p_family = "Bahnschrift",
-  p_color = '#c9184a',
-  p_size = 20,
-  p_y = 0.55,
+  p_color = font_color,
+  p_size = 21,
+  p_y = 0.6,
   # Image
   subplot = dinosaur,
   # Image attributes
@@ -159,51 +219,32 @@ statasaurus <- sticker(
   s_x = 1,
   s_y = 1.2,
   # Hexagon attributes
-  h_fill = '#d6e3f8',
-  h_color = '#5e548e',
-  h_size = 1.5,
+  h_fill = background_color,
+  h_color = border_color,
+  h_size = 2,
   # Add a link
-  url = "FALL 2022",
+  url = "image: Flaticon.com",
   u_size = 5,
-  u_color = '#3d2645',
+  u_color = note_color,
   # Add spotlight
   spotlight = F,
   # Spotlight attributes
+  # add some shadow to the pictures
   l_y = 1,
-  l_x = 1,
   l_width = 3,
   l_height = 3,
-  l_alpha = 0.3,
+  l_alpha = 0.5,
   # File saving
   filename = "statasaurus_logo.png",
   dpi = 300,
   white_around_sticker = FALSE
   ) 
 
-
-
 ```
 
 ::: panel-tabset
-## Option A
-```{r}
-#| echo: false
-#| eval: true
+## Final logo
 
-statshub %>% print()
-
-```
-
-## Option B
-```{r}
-#| echo: false
-#| eval: true
-
-tidymonday %>% print()
-
-```
-
-## Option C
 ```{r}
 #| echo: false
 #| eval: true
@@ -211,5 +252,4 @@ tidymonday %>% print()
 statasaurus %>% print()
 
 ```
-
 :::
